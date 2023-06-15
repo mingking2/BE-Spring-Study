@@ -9,6 +9,7 @@ import java.util.List;
 
 public class quiz3 {
     public static void main(String[] args) {
+        // 1번 문제
         List<String> celebs = new ArrayList<>();
         celebs.add("아이유");
         celebs.add("린다G");
@@ -26,6 +27,31 @@ public class quiz3 {
             String celeb = celebs.get(i);
             System.out.println(celeb);
         }
+
+        System.out.println(countFruit("감"));
+    }
+    
+    public static int countFruit(String given) {
+        List<String> fruits = new ArrayList<>();
+        fruits.add("감");
+        fruits.add("배");
+        fruits.add("감");
+        fruits.add("딸기");
+        fruits.add("수박");
+        fruits.add("메론");
+        fruits.add("수박");
+        fruits.add("딸기");
+        fruits.add("수박");
+        fruits.add("메론");
+        
+        int count = 0;
+        for(int i=0;i<fruits.size();i++) {
+            String fruit = fruits.get(i);
+            if(given == fruit) {
+                count += 1;    
+            }
+        }
+        return count;
     }
 
 }
