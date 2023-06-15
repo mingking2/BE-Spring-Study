@@ -80,6 +80,86 @@
 
 ## [1주차] 자바 클래스
 - 클래스란?
+  - 클래스는 정보를 묶는 것이다.
 - 객체지향 프로그래밍
+  - 조건문, 반복문, 메소드만으로 무질서한 코드에 규칙이 생겼던 것
+  - 조금 더 프로그래밍을 현실 세계에 빗대어 체계적으로 해보자는 발상이, 객체지향 프로그래밍의 핵심이다.
 - 클래스
+  - 현실과 비슷한 개념(객체)을 나타내기 위한 자바의 도구를 클래스라고 부른다.
+  - 클래스 내 정보를 멤버 변수라고 한다.
 - 생성자(Constructor)
+  - 클래스명과 똑같은 이름을 가진 메소드를 "생성자"라고 한다.
+  - 클래스 변수를 새롭게 만들 때 사용한다.
+  - this
+    - ex) 우리가 바꾸고 싶은 건 빵틀의 값이 아니라 실제 빵의 값이다.
+    - this 라고 표시함으로써, 빵틀 전체의 값을 바꾸는게 아니라 빵 하나의 값만 바꾸는 것이다.
+
+
+## [1주차] Getter, Setter
+- private, public
+  - 클래스의 모든 정보들을 쉽게 접근할 수 있으면 안된다.
+  - 그래서 자바의 클래스는, 밖에 드러내도 되는 것들을 public, 함부로 바꾸면 안되는 것들을 private으로 구분해서 나타낸다.
+  
+- Getter / Setter
+  - 정보를 가져오는 메소드를 Getter,
+  - 정보를 바꾸는 메소드를 Setter라고 부른다.
+  - Getter, Setter 만들기
+  - Getter, Setter 사용하기
+- 연습퀴즈 - 클래스 & 메소드
+
+
+## [1주차] 브라우저에 바로 나타내보기
+- 인트로
+  - 데이터를 서버에서 전달받는 형식을 JSON이라고 부른다.
+- JSONView 설치하기
+- 화면에 클래스 정보 띄어보기
+  - 데이터로 응답하려면, RestController를 사용해야 한다.
+  - Rest
+    - 서버의 응답이 JSON 형식임을 나타낸다.
+    - HTML, CSS 등을 주고받을 때는 Rest 를 붙이지 않는다.
+  - Controller
+    - 자동 응답기 : 누군가가 말을 걸면 응답한다.
+    - 클라이언트의 요청(Request)을 전달받는 코드를 Controller라고 부른다.
+      **- JSON 만을 돌려주는 것은 RestController 라고 부른다.**
+    - 우리는 이런 역할을 하는 빵틀을 새롭게 만들면 된다.
+  - RestController 만들기
+    1. src > main > com.sparta.week01 에 controller 패키지를 만든다.
+    2. CourseController.java 파일을 만든다.
+    3. CourseController.java 를 복사/붙여넣기 한다.
+  - CourseController.java 이해하기
+    - @GetMapping
+      - 브라우저에서 주소를 치는 행위를 GET 방식으로 정보를 요청한다.
+      - 스프링 주소 (http://localhost:8080) 뒤의 주소가 /courses 일 경우,
+      - getCourse 메소드를 실행함을 나타낸다.
+
+
+## [1주차] 그레이들(Gradle)이란?
+- 개발자들은 얼마나 남의 코드에 의존할까?
+- 다른 사람들이 만들어둔 도구 내려받기
+  - Javascript - NPM
+  - Python - pip
+  - Java - mavenCentral, jcenter
+  - 다운로드받고 적용하는 과정을 보다 편하게!
+- 추가해보기
+  1. Maven Repository 에서 원하는 라이브러리를 찾는다.
+  2. build.gradle 에 원하는 프로젝트 파일을 넣는다.
+  3. dependencies 옆 Run 버튼을 누른다.
+  4. 우측 Gradle 탭의 새로고침 버튼을 누른다.
+  5. 대상 프로젝트가 추가된 것을 확인한다.
+
+
+## [1주차] 끝 & 숙제설명
+- 잠깐 복습
+  - 웹의 기본 개념, 서버, 클라이언트
+  - 인텔리제이를 사용해 스프링 프로젝트 만들기, 스프링, 그레이들
+  - 자바 언어의 기초 문법 : int, float, String, List
+  - 클래스 만들기 : 클래스, 메소드, 멤버
+  - 클래스 정보를 브라우저에 나타냄 : JSON, 컨트롤러
+- 숙제 설명
+  1. 새로운 스프링 프로젝트를 만든다. 
+  2. Person 클래스를 만든다.
+  3. 3개 이상의 멤버 변수를 만든다. (name, age, address, job)
+  4. 멤버 변수는 모두 private 이다.
+  5. Getter, Setter를 만든다.
+  6. PersonController를 만들고, http://localhost:8080/myinfo 에 나의 정보가 뜨도록 한다.
+  7. Person.java, PersonController.java 를 제출한다.
