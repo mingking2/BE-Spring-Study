@@ -47,9 +47,9 @@ public class prac {
 //      [1주차] 자바 기초 문법 - 2
 //        - 참거짓 : boolean
 //            - 참거짓 타입은 boolean 으로 표시한다.
-            int age = 20;
-            boolean isAdult = age > 19;
-            boolean isKid = age <= 19;
+            int age1 = 20;
+            boolean isAdult = age1 > 19;
+            boolean isKid = age1 <= 19;
 
             // 같은지는 == 으로 확인, 다른지는 != 으로 확인
             boolean isEq = 20 == 20;
@@ -156,6 +156,69 @@ public class prac {
 //        }
 
 
+
+//     [1주차] 자바 기초 문법 - 4
+//        - 반복문
+//          [ex] 과일 목록 준비하기
+        List<String> fruits = new ArrayList<>();
+        fruits.add("감");
+        fruits.add("배");
+        fruits.add("감");
+        fruits.add("딸기");
+        fruits.add("수박");
+        fruits.add("메론");
+        fruits.add("수박");
+        fruits.add("딸기");
+        fruits.add("수박");
+        fruits.add("메론");
+        System.out.println(fruits);
+
+
+//          [ex] 과일 목록 차례대로 인쇄하기 - 반복문 없이
+        System.out.println(fruits.get(0));
+        System.out.println(fruits.get(1));
+        System.out.println(fruits.get(2));
+        System.out.println(fruits.get(3));
+        System.out.println(fruits.get(4));
+        System.out.println(fruits.get(5));
+        System.out.println(fruits.get(6));
+        System.out.println(fruits.get(7));
+        System.out.println(fruits.get(8));
+        System.out.println(fruits.get(9));
+
+
+//          [ex] 과일 목록 차례대로 인쇄하기 - 반복문과 함께
+        for(int i=0; i<10; i++) {
+            String fruit = fruits.get(i);
+            System.out.println(fruit);
+        }
+
+
+//          - 반목문의 구조
+//        for (시작조건; 계속하는조건; 더하기) {
+//            명령
+//        }
+
+
+//        - 조건문
+//          [ex] 미성년자 여부 판별하기
+        int age = 20;
+        if (age > 19) {
+            System.out.println("성인입니다.");
+        } else {
+            System.out.println("미성년자입니다.");
+        }
+
+
+//          [ex] "감" 개수 세는 반복문 만들기
+        int count = 0;
+        for (int i=0;i<fruits.size();i++) {
+            String fruit = fruits.get(i);
+            if(fruit == "감") {
+                count+=1;
+            }
+        }
+        System.out.println(count);
 
     }
 

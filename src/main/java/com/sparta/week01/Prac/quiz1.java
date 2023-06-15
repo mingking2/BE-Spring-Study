@@ -3,7 +3,7 @@ package com.sparta.week01.Prac;
 import java.util.ArrayList;
 import java.util.List;
 
-public class quiz {
+public class quiz1 {
     public static void main(String[] args) {
 
 //      - [1주차 자바 기초 문법 - 2] 연습 퀴즈
@@ -19,5 +19,7 @@ public class quiz {
         courseList.add(course2);
 
         System.out.println(courseList);
+
+
     }
 }
