@@ -163,3 +163,6 @@
   5. Getter, Setter를 만든다.
   6. PersonController를 만들고, http://localhost:8080/myinfo 에 나의 정보가 뜨도록 한다.
   7. Person.java, PersonController.java 를 제출한다.
+
+## [1주차] 숙제 완료
+- week01_assignment 프로젝트파일
