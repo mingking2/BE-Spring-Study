@@ -1,4 +1,4 @@
-package com.sparta.week01;
+package com.sparta.springBasic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.sparta.week01.Prac;
+package com.sparta.springBasic.week01.prac;
 
 public class prac2 {
     public static void main(String[] args) {

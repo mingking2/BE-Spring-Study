@@ -1,4 +1,4 @@
-package com.sparta.week01.Prac;
+package com.sparta.springBasic.week01.prac;
 
 
 // [1주차] 자바클래스 + Getter, Setter 연습 퀴즈

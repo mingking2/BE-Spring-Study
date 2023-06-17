@@ -123,7 +123,7 @@
       **- JSON 만을 돌려주는 것은 RestController 라고 부른다.**
     - 우리는 이런 역할을 하는 빵틀을 새롭게 만들면 된다.
   - RestController 만들기
-    1. src > main > com.sparta.week01 에 controller 패키지를 만든다.
+    1. src > main > com.sparta.springBasic 에 controller 패키지를 만든다.
     2. CourseController.java 파일을 만든다.
     3. CourseController.java 를 복사/붙여넣기 한다.
   - CourseController.java 이해하기
@@ -165,4 +165,4 @@
   7. Person.java, PersonController.java 를 제출한다.
 
 ## [1주차] 숙제 완료
-- week01_assignment 프로젝트파일
+- week01.assginment 패키지 참조
