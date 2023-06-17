@@ -46,7 +46,7 @@
         - 테이블에 데이터를 삽입하고,
         - 삽입된 데이터를 조회해보는 것이다.
     - 테이블 생성하기
-      ```SQL
+      ```sql
       CREATE TABLE IF NOT EXISTS courses (
        id bigint NOT NULL AUTO_INCREMENT,
        title varchar(255) NOT NULL,
@@ -55,12 +55,14 @@
       );
       ``` 
     - 테이블 삽입하기
-      ```SQL
+      ```sql
       INSERT INTO courses (title, tutor) VALUES
           ('웹개발의 봄', '남병관'), ('웹개발 종합반', '주민기');
       ```
     - 데이터 조회하기
-      - ```SELECT * FROM courses```
+      ```sql
+      SELECT * FROM courses
+      ```
       
   - 잠깐, 이게 뭐지?
     - 위에서 사용한 생성, 삽입, 조회 명령문을 SQL(Structured Query Language)이라고 한다.
@@ -97,7 +99,9 @@
     - 자바 짜다가 갑자기 SQL 짜고, 그걸 잘 맞추어 넣어야 한다. 복잡함!
   - JPA가 있다면?
     - 설정은 아래 한 줄로 끝
-      - ``` implementation 'org.springframework.boot:spring-boot-starter-data-jpa' ```
+      ```java 
+      implementation 'org.springframework.boot:spring-boot-starter-data-jpa' 
+      ```
     - 명령도 그냥 자바로 만들면 된다. 
       - ``` 
         respository.save(new Customer("Jack", "Bauer"))
@@ -134,3 +138,49 @@
 - JPA 사용해보기
   - JPA 실행 코드
   - 웹콘솔 접속해서 확인해보기
+
+
+## [2주차] 생성일자, 수정일자
+- 상속의 개념
+  - "클래스의 상속 -> 이미 만들어둔거 가져다 쓰자! 라고 선언하는 것"
+  - Tutor extends Person과 같이 사용가능
+    ```java
+    class Person {
+        private String name;
+        private String getName() {
+            return this.name;
+        }
+    }
+    
+    class Tutor extends Person {
+        private String address;
+        // Person 클래스를 상속했기 때문에,
+        // name 멤버변수와 getName() 메소드를 가지고 있따.
+    }
+    ```
+- 상속 연습해보기 - Timestamped
+  - DB 기본 중의 기본, "생성일자"와 "수정일자"를 필드로 가지는 것이다.
+  - course 클래스가 course 테이블이 되는 것
+  - Course 클래스에 생성일자/수정일자 멤버를 추가하자
+  - **Timestamped.java**
+    ```java
+    @MappedSuperclass // 상속했을 때, 컬럼으로 인식하게 된다.
+    @EntityListeners(AuditingEntityListener.class) // 생성/수정 시간을 자동으로 반영하도록 설정
+    public class Timestamped {
+      
+        @CreatedDate // 생성일자임을 나타낸다.
+        private LocalDateTime createdAt;
+    
+        @LastModifiedDate // 마지막 수정일자임을 나타낸다.
+        private LocalDateTime modifiedAt;
+    }
+    ```
+  - Course 클래스에 아래와 같이 붉은색 글자를 추가한다.
+    ```java
+    class Course extends Timestamped { }
+    ```
+  - Application 클래스에 다음과 같이 붉은색 글자를 추가한다.
+    ```
+    @EnableJpaAuditing
+    ```
+- http://localhost:8080/h2-console 접속해서 확인해보기
