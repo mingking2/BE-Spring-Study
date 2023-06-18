@@ -2,6 +2,7 @@ package com.sparta.springBasic;
 
 import com.sparta.springBasic.week02.domain.Course;
 import com.sparta.springBasic.week02.domain.CourseRepository;
+import com.sparta.springBasic.week02.service.CourseService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,13 +22,24 @@ public class SpringBasicApplication {
 
 	// APPlication.java 의 main 함수 아래에 붙인다.
 	@Bean
-	public CommandLineRunner demo(CourseRepository repository) {
+	public CommandLineRunner demo(CourseRepository courseRepository, CourseService courseService) {
 		return (args) -> {
 			// 데이터 저장하기
-			repository.save(new Course("프론트엔드의 꽃, 리액트", "강병준"));
+			courseRepository.save(new Course("프론트엔드의 꽃, 리액트", "강병준"));
 
+			System.out.println("데이터 인쇄");
 			// 데이터 전부 조회하기
-			List<Course> courseList = repository.findAll();
+			List<Course> courseList = courseRepository.findAll();
+			for(int i=0;i<courseList.size();i++) {
+				Course course = courseList.get(i);
+				System.out.println(course.getId());
+				System.out.println(course.getTitle());
+				System.out.println(course.getTutor());
+			}
+
+			Course new_course = new Course("웹개발의 봄, Spring", "주민기");
+			courseService.update(1L, new_course);
+			courseList = courseRepository.findAll();
 			for(int i=0;i<courseList.size();i++) {
 				Course course = courseList.get(i);
 				System.out.println(course.getId());
@@ -36,9 +48,11 @@ public class SpringBasicApplication {
 			}
 
 			// 데이터 하나 조회하기
-			Course course = repository.findById(1L).orElseThrow(
+			Course course = courseRepository.findById(1L).orElseThrow(
 					() -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
 			);
+
+			courseRepository.deleteAll();
 		};
 	}
 

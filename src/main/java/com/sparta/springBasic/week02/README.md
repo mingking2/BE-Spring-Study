@@ -217,4 +217,6 @@
   2. src > main > java > com.sparta.week02 > service 패키지 생성
   3. CourseService.java 만들기
 - 데이터 변경하기 (Update)
+  - application.java 파일에 입력
 - 데이터 삭제하기 (Delete)
+  - application.java 파일에 입력

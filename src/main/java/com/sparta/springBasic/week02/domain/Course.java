@@ -1,8 +1,9 @@
 package com.sparta.springBasic.week02.domain;
 
-import com.sparta.springBasic.week02.Timestamped;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @NoArgsConstructor // 기본생성자를 대신 생성해준다.
 @Entity // 테이블임을 나타낸다.
@@ -34,7 +35,11 @@ public class Course extends Timestamped {
         this.title = title;
         this.tutor = tutor;
     }
-}
 
+    public void update(Course course) {
+        this.title = course.title;
+        this.tutor = course.tutor;
+    }
+}
 
 
