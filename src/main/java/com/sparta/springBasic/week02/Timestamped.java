@@ -1,4 +1,4 @@
-package com.sparta.springBasic.week02.domain;
+package com.sparta.springBasic.week02;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

@@ -99,7 +99,7 @@
     - 자바 짜다가 갑자기 SQL 짜고, 그걸 잘 맞추어 넣어야 한다. 복잡함!
   - JPA가 있다면?
     - 설정은 아래 한 줄로 끝
-      ```java 
+      ```
       implementation 'org.springframework.boot:spring-boot-starter-data-jpa' 
       ```
     - 명령도 그냥 자바로 만들면 된다. 
@@ -143,6 +143,7 @@
 ## [2주차] 생성일자, 수정일자
 - 상속의 개념
   - "클래스의 상속 -> 이미 만들어둔거 가져다 쓰자! 라고 선언하는 것"
+  
   - Tutor extends Person과 같이 사용가능
     ```java
     class Person {
@@ -158,6 +159,7 @@
         // name 멤버변수와 getName() 메소드를 가지고 있따.
     }
     ```
+    
 - 상속 연습해보기 - Timestamped
   - DB 기본 중의 기본, "생성일자"와 "수정일자"를 필드로 가지는 것이다.
   - course 클래스가 course 테이블이 되는 것
@@ -183,4 +185,36 @@
     ```
     @EnableJpaAuditing
     ```
+    
 - http://localhost:8080/h2-console 접속해서 확인해보기
+
+
+## [2주차] JPA 심화
+- CRUD
+  ```
+  CRUD란? 정보관리의 기본 기능
+  → 생성 (Create)
+  → 조회 (Read)
+  → 변경 (Update)
+  → 삭제 (Delete)
+
+  JPA로 위의 기능을 하는 방법을 익혀보겠습니다.
+  ```
+  
+- 데이터 저장하기 (Create) & 조회하기 (Read)
+  - Repository의 save와 findAll 등을 이용한다.
+  - create & read 해보기
+    - application.java 파일에 입력
+- Service 의 개념
+  - update, delete 로 넘어가기 전에, 다루어야 하는 개념에 바로 Service이다.
+  - 스프링의 구조는 3가지 영역으로 나눌 수 있다.
+    1. Controller: 가장 바깥 부분, 요청/응답을 처리함. -> 2주차 후반에 배움
+    2. Service: 중간 부분, 실제 중요한 작동이 많이 일어나는 부분 -> 지금 배움
+    3. Repo: 가장 안쪽 부분, DB와 맞닿아 있음. -> 여태 배움(Repository, Entity)
+    - Update는 Service 부분에 작성한다.
+- Service 만들기
+  1. Course 클래스에 update 메소드 추가
+  2. src > main > java > com.sparta.week02 > service 패키지 생성
+  3. CourseService.java 만들기
+- 데이터 변경하기 (Update)
+- 데이터 삭제하기 (Delete)

@@ -1,11 +1,12 @@
 package com.sparta.springBasic.week02.domain;
 
+import com.sparta.springBasic.week02.Timestamped;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor // 기본생성자를 대신 생성해준다.
 @Entity // 테이블임을 나타낸다.
-public class Course extends Timestamped{
+public class Course extends Timestamped {
 
     @Id // ID 값, Primary Key로 사용하겟다는 의미이다.
     @GeneratedValue(strategy = GenerationType.AUTO) // 자동 증가 명령이다.
@@ -16,6 +17,10 @@ public class Course extends Timestamped{
 
     @Column(nullable = false)
     private String tutor;
+
+    public Long getId() {
+        return this.id;
+    }
 
     public String getTitle() {
         return this.title;
