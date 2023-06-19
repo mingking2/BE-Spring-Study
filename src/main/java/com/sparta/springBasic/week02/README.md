@@ -343,3 +343,26 @@
 - 연습퀴즈 - API
   - ID 가 1인 강의를 삭제하는 API를 만들어보세요.
   - 성공!
+
+
+
+## [2주차] 끝 & 숙제설명
+- 잠깐 복습
+  - RDBMS란 무엇인지, 대표적인 제품과 작동 명령어인 SQL에 대해 배웠다.
+  - 자바 명령어를 SQL로 번역하고 기본적인 메소드를 제공하는 JPA에 대해 배웠다.
+  - Controller, Service, Repository 계층 개념을 배웠다. 계층 간 소통을 위한 DTO를 사용했다.
+  - 코드를 절약하는 Lombok을 사용했다.
+  - REST API 개념에 대해서 배우고, CRUD 각각에 해당하는 POST, GET, PUT, DELETE API를 직접 구축했다.
+- 숙제 설명
+  - 1주차 숙제로 작성한 Person 클래스를 CRUD할 수 있는 PersonController.java 파일을 만들고, 다음 API를 완성하세요.
+    - http://localhost:8080/api/persons POST : 친구 생성
+    - http://localhost:8080/api/persons GET : 친구 목록 조회
+    - http://localhost:8080/api/persons/{id} PUT : 친구 정보 변경
+    - http://localhost:8080/api/persons/{id} DELETE : 친구 정보 삭제
+  - ARC를 이용해 성곡적을 동작함을 확인하세요
+  - 숙제파일
+    - Person.java
+    - PersonRequestDto.java
+    - PersonRepository.java
+    - PersonService.java
+    - PersonController.java
