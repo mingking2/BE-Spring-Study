@@ -53,7 +53,7 @@ public class SpringBasicApplication {
 //                    () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
 //            );
 
-            courseRepository.deleteAll();
+            // courseRepository.deleteAll();
         };
     }
 

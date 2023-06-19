@@ -250,3 +250,41 @@
     - CourseService 변경하기
     - Course 변경하기
     - Application 변경하기
+
+
+## [2주차] API - GET
+- API
+  ```
+  클라이언트 - 서버 간의 약속이다.
+  
+  클라이언트가 정한대로 서버에게 요청(Request)을 보내면,
+  서버가 요구사항을 처리하여 응답(Response)을 반환한다.
+  ```
+- REST
+  - REST란, 주소에 명사, 요쳥 방식에 동사를 사용함으로써 의도를 명확히 드러냄을 의미한다.
+  - 여기에 쓰이는 동사는 우리가 JPA 시간에 배운 CRUD를 지칭한다.
+  - 즉 A에 대해 생성(POST)/조회(GET)/수정(PUT)/삭제(DELETE) 오청을 하는 것이다.
+  - 예시
+    - GET /courses
+      - 강의 전체 목록 조회 요청
+    - GET /courses/1
+      - ID가 1번인 녀석 조회 요청
+    - POST /courses
+      - 강의 생성 요청
+    - PUT /courses/3
+      - ID가 3번인 녀석 수정 요청
+    - DELETE /courses/2
+      - ID가 2번인 녀석 삭제 요청
+  - 주의사항
+    - 주소에 들어가는 명사들은 복수형을 사용한다.
+      - /course
+    - 주소에 동사는 가급적 사용하지 않는다.
+      - /accounts/edit
+- Get
+  - 데이터 조회 API부터 만들자
+  1. src > main > java > com.sparta.week02 아래에 controller 패키지를 만든다.
+  2. CourseController.java 파일을 생성한다.
+  3. CourseController.java
+  4. Application.java 수정
+  5. http://localhost:8080/api/courses 접속하여 확인
+- ARC(Advanced REST Client) 소개

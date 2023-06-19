@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CourseController {
+public class CourseController1 {
 
     @GetMapping("/courses")
     public prac2.Course getCourses() {
