@@ -220,3 +220,33 @@
   - application.java 파일에 입력
 - 데이터 삭제하기 (Delete)
   - application.java 파일에 입력
+
+
+
+## [2주차] Lombok, DTO
+- 배울 부분
+  - API, ( Controller, Service, DTO )
+- Lombok 소개
+  - 코드 절약하기
+    - Lombok(이하 롬복)은, 자바 프로젝트를 진행하는데 거의 필수적으로 필요한 메소드/생성자 등을 자동생성해줌으로써 코드를 절약할 수 있도록 도와주는 라이브러리이다.
+  - 설치
+  - 사용
+    - Course.java
+      - Course 클래스 Getter, NoArgsConstructor 적용
+    - CourseService 클래스 RequiredArgsConstructor 적용
+- DTO
+  ```
+  테이블을 막 건드려도 될까?
+  = read, update할 때 Course 클래스를 막 써도 될까?
+  = 내가 아닌 다른 사람이 변경이라도 한다면??
+  
+  완충재로 활용하는 것이
+  DTO(Data Transfer Object)이다.
+  ```
+  - 생성하기
+    1. src > main > java > com.sparta.week02 > models 에 CourseRequestDto 파일 생성
+    2. CourseRequestDto.java
+  - 적용하기
+    - CourseService 변경하기
+    - Course 변경하기
+    - Application 변경하기
