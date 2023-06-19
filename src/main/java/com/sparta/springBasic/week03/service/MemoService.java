@@ -15,10 +15,10 @@ public class MemoService {
 
     @Transactional
     public Long update(Long id, MemoRequestDto requestDto) {
-        Memo memo1 = memoRepository.findById(id).orElseThrow(
+        Memo memo = memoRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않는다.")
         );
-        memo1.update(requestDto);
-        return memo1.getId();
+        memo.update(requestDto);
+        return memo.getId();
     }
 }
