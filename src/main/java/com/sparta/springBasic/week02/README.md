@@ -293,3 +293,53 @@
   1. 사전과제에서 설치한 ARC를 실행한다.
   2. Method는 GET, Request URL에는 http://localhost:8080/api/courses 를 입력한다.
   3. 결과 화면을 확인한다.
+
+
+
+## [2주차] API - POST,PUT,DELETE
+- Post
+  - Post 는 생성 요청이다.
+  - CourseController > POST
+  - Course 클래스 생성자 추가
+  - 10초 복습
+    ```
+    주소: /api/courses                          -> GET 전체 강의 조회
+    방식: POST             ->   /api/courses  <
+                                               -> POST 신규 강의 생성
+                                                  강의 데이터는 @RequestBody로 표시
+    ```
+  - 작동 확인
+    1. 스프링을 재시작한다.
+    2. ARC를 키고, 다음과 같이 입력
+       - Method : POST
+       - URL: http://localhost:8080/api/courses
+    3. 하단의 Headers를 클릭하고 아래처럼 입력
+       - name : Content-Type
+       - value : application/json
+    4. BODY 탭을 클릭하고, 아래와 같이 입력
+       ```JSON
+       "title": "앱개발 종합반",
+       "tutor": "주민기"    
+       ```
+    5. SEND 버튼을 누르고, 결과를 확인
+    
+- Put
+  - CourseController > PUT
+  - 작동확인
+    1. 스프링을 재시작한다.
+    2. ARC를 키고, 다음과 같이 입력
+      - Method : POST
+      - URL: http://localhost:8080/api/courses/1
+    3. 하단의 Headers를 클릭하고 아래처럼 입력
+      - name : Content-Type
+      - value : application/json
+    4. BODY 탭을 클릭하고, 아래와 같이 입력
+       ```JSON
+       "title": "앱개발 종합반",
+       "tutor": "강병준"    
+       ```
+    5. SEND 버튼을 누르고, 결과를 확인
+    
+- 연습퀴즈 - API
+  - ID 가 1인 강의를 삭제하는 API를 만들어보세요.
+  - 성공!
