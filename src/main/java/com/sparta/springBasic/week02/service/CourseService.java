@@ -3,8 +3,6 @@ package com.sparta.springBasic.week02.service;
 import com.sparta.springBasic.week02.domain.Course;
 import com.sparta.springBasic.week02.domain.CourseRepository;
 import com.sparta.springBasic.week02.models.CourseRequestDto;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
