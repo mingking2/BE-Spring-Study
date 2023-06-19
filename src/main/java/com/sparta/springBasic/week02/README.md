@@ -288,3 +288,8 @@
   4. Application.java 수정
   5. http://localhost:8080/api/courses 접속하여 확인
 - ARC(Advanced REST Client) 소개
+  - 현업에서 API를 만들고 나면 각종 툴로 테스트 및 기능 확인을 정말 많이 한다.
+  - 그 중에서도 유용한 툴인 ARC를 함께 사용해보자
+  1. 사전과제에서 설치한 ARC를 실행한다.
+  2. Method는 GET, Request URL에는 http://localhost:8080/api/courses 를 입력한다.
+  3. 결과 화면을 확인한다.
