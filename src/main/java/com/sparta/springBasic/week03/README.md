@@ -292,3 +292,74 @@
 - 시작코드
   - src > main > resources > static 에 images 폴더를 만들고 이미지 4개 삽입
   - src > main > resources > static 에 만든 index.html에 내용 삽입
+
+
+## [3주차] 메모 생성하기 - writePost 함수
+- 개발 스펙 확인
+  1. 사용자가 입력한 메모 내용 확인하기
+  2. POST API 사용해서 메모 신규 생성하기
+  3. 화면 새로고침하여 업데이트 된 메모 목록 확인하기
+- 사용자가 입력한 메모 내용 확인하기
+  ```JavaScript
+  let contents = $('#contents').val();
+  ```
+- 작성 내용 확인하기
+  ```JavaScript
+  if (isValidContents(contents) == false) {
+    return;
+  }
+  ```
+- 랜덤한 username 만들기
+  ```JavaScript
+  let username = genRandomName(10);
+  ```
+- 전달한 data 를 JSON으로 만들기
+  ```JavaScript
+  let data = {'username': username, 'contents': contents};
+  ```
+- POST API 사용해서 메모 신규 생성하기
+  ```JSON.stringify 란? JSON을 문자열로 만들어주는 것이다.```
+  ```JavaScript
+  $.ajax({
+      type: "POST",
+      url: "/api/memos",
+      contentType: "application/json", // JSON 형식으로 전달함을 알리기
+      data: JSON.stringify(data),
+      success: function (response) {
+          alert('메시지가 성공적으로 작성되었습니다.');
+          window.location.reload();
+      }
+  });
+  ```
+- writePost 함수 완성
+  ```JavaScript
+  // 메모를 생성한다.
+  function writePost() {
+    // 1. 작성한 메모를 불러온다.
+    let contents = $('#contents').val();
+    
+    // 2. 작성한 메모가 올바른지 isValidContents 함수를 통해 확인한다.
+    if ( isValidContents(contents) == false) {
+      return;
+    }
+  
+    // 3. genRandomName 함수를 통해 익명의 username을 만든다.
+    let username = genRandomName(10);
+  
+    // 4. 전달한 data JSON으로 만든다.
+    let data = {'username': username, 'contents': contents};
+  
+    // 5. POST /api/memos 에 data를 전달한다.
+    $.ajax({
+       type: "POST",
+       url: "/api/memos",
+       contentType: "application/json", // JSON 형식으로 전달함을 알리기
+       data: JSON.stringify(data),
+       success: function (response) {
+           alert('메시지가 성공적으로 작성되었습니다.');
+           window.location.reload();
+       }
+    });
+
+  }
+  ```
