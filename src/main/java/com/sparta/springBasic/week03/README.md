@@ -227,4 +227,68 @@
   $('#contents').hide();
   ```
 - 연습 장소로 들어가보기
+  - 개발자 도구 > 콘솔 에서 jQuery 를 사용하려면 해당 웹사이트에 이미 임포트 되어 있어야 한다.
+  - jQuery 놀이터 들어가기
+    ```JavaScript http://spartacodingclub.shop```
 - 숨기기 / 나타내기
+  - HTML 나타내기
+      ```JavaScript
+      $('#post-box').show();
+      ```
+  - HTML 숨기기
+    ```JavaScript
+    $('#post-box').hide();
+    ```
+
+
+## [3주차] jQuery 기초 - 2
+- input 값 가져오기, 넣기
+  - input 값 가져오기
+    ```JavaScript
+    $('#post-url').val();
+    ```
+  - input 값 넣기
+    ```JavaScript
+    $('#post-url').val('new text');
+    ```
+- HTML 없애기, 추가하기
+  - HTML 없애기
+    ```JavaScript
+    $('#cards-box').empty();
+    ```
+  - HTML 추가하기
+    ```JavaScript
+    $('#cards-box').append(`<div class="card">
+    <img class="card-img-top"
+       src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+       alt="Card image cap">
+      <div class="card-body">
+        <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+        <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+        <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+      </div>
+    </div>`);
+    ```
+
+
+## [3주차] 클라이언트 설계하기
+- 필요한 기능 살펴보기
+  1. 접속하자마자 메모 전체 목록 조회하기
+     -  GET API 사용해서 메모 목록 불러오기
+     - 메모 마다 HTML 만들고 붙이기
+  2. 메모 생성하기
+     - 사용자가 입력한 메모 내용 확인하기
+     - POST API 사용해서 메모 신규 생성하기
+     - 화면 새로고침하여 업데이트 된 메모 목록 확인하기
+  3. 메모 변경하기
+     - 사용자가 클릭한 메모가 어떤 것인지 확인
+     - 변경한 메모 내용 확인
+     - PUT API 사용해서 메모 내용 변경하기
+     - 화면 새로고침하여 업데이트 된 메모 목록 확인하기
+  4. 메모 삭제하기
+     - 사용자가 클릭한 메모가 어떤 것인지 확인
+     - DELETE API 사용해서 메모 삭제하기
+     - 화면 새로고침하여 업데이트 된 메모 목록 확인하기
+- 시작코드
+  - src > main > resources > static 에 images 폴더를 만들고 이미지 4개 삽입
+  - src > main > resources > static 에 만든 index.html에 내용 삽입
