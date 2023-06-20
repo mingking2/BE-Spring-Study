@@ -57,3 +57,174 @@
 - 연습퀴즈 : Update API 만들기
   - 메모의 정보를 받아 DB의 데이터를 변경하는 메소드를 만들어보세요.
   - Create 와 유사하다.
+
+
+## [3주차] HTML, CSS 기초
+- HTML, CSS, Javascript의 구분
+  - HTML은 뼈대고, CSS는 꾸며주는 녀석이다.
+- HTML의 기초
+  - HTML의 특징
+    - 여는 태그, 닫는 태그가 쌍으로 존재한다.
+    - 교차가 불가능하다.
+    - head, body 태그로 구분된다.
+      - head 태그는 CSS, Javascript 코드를 포함하고,
+      - body 태그는 뼈대 전체를 포함한다.
+  - 대표적인 HTML 태그들
+    - h1 ~ h6 : headline의 약자, 신문 제목 같은 녀석
+    - div : divison, 나누는 녀석, 투명 비닐봉투
+    - p : paragraph, 신문 기사 단락과 같은 텍스트 내용을 담는다.
+    - ul, ol, li : (un)ordered list, list에 해당한다. bullet point
+    - span : 글을 중간중간 잘라내서 색을 입혀준다든지 할 때 사용한다.
+    - table, th, tr, td : 표, 엑셀 같은 표를 그릴 때 사용한다.
+    - img : 이미지를 나타낼 때 사용한다.
+- CSS의 기초
+  - 문법
+    - head > style 태그 안에 작성한다.
+    - 세미콜론(;)으로 마무리한다.
+    ```java
+    .wrap {
+        width: 538px;
+        margin: 10px auto;
+    }
+    
+    #contents {
+        width: 538px;
+    }
+    
+    .area-write {
+        position: relative;
+        width: 538px;
+    }
+    ```
+  - 선택자(id, class)
+    - 꾸미려면 가리켜야 하겠죠? 가리키는 방법은 두 가지가 있다.
+    - id: HTML 파일을 통틀어 단 하나만 존재한다. #으로 표시한다. (#contents)
+    - class: 중복 적용이 가능하다. .으로 표시한다. (.area-write)
+- 타임라인 페이지를 미리 한 번 살펴보자
+  1. src > main > resources > static 에 index.html 파일을 만든다.
+  2. index.html 파일 완성
+  3. static 폴더에 images 폴더를 만든다.
+  4. 이미지를 다운받고, images 폴더에 넣는다.
+     - delete 이미지
+     - done 이미지
+     - edit 이미지
+     - send 이미지
+
+
+
+## [3주차] Javascript 기초 - 1
+- Javascript 란?
+  - 브라우저를 살아 숨쉬게 만드는 친구이다.
+  - 클릭, 마우스 오버 시 색 변화, 숨기기, 나타내기, 등등 수많은 일을 할 수 있다.
+- 크롬 개발자 도구
+  - Javascript 공부, 아니 웹서비스 개발을 하는데 필수적인 녀석이다.
+  - F12 키를 누르면 개발자 도구가 뜬다. console 탭을 눌러보자.
+  - Javascript 기초 문법
+    - 변수
+      ```JavaScript
+        let a = 3; // 변수를 처음 선언할 때 let을 써준다. 자료형은 써주지 않아도 된다.
+        let b = 2;
+        console.log(a + b);  // System.out.println()과 같은 기능을 한다.
+        b = 7;
+        console.log(a + b);
+      ```
+    - 자료형 (문자, 숫자, boolean, 리스트, 딕셔너리)
+      - 자바스크립트 문자, 숫자
+        ```JavaScript
+        let name = 'bknam';
+        let course = "웹개발의 봄 Spring" // 자바와 다르게 홑/쌍따옴표 상관없습니다.
+        let num = 10;
+        console.log(num + name); // 문자 + 숫자 하면 둘 모두를 문자로 묶습니다.
+        ```
+      - 자바스크립트 boolean
+        ```JavaScript
+         let age1 = 18;
+         let age2 = 20;
+         let isAdult = age1 > 19;
+         console.log(isAdult); // false
+         isAdult = age2 > 19;
+         console.log(isAdult); // true
+        ```
+      - 자바스크립트 리스트
+        ```JavaScript
+        let fruits = ['사과', '딸기', '수박']; // List 보다 편하게 사용할 수 있습니다.
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+        ```
+      - 자바스크립트 딕셔너리
+        ```JavaScript
+        let course = {
+           'title': '웹개발의 봄, Spring',
+           'tutor': '남병관'
+        };
+
+        console.log(course);
+        ```
+    - 반복문
+      ```JavaScript
+      let fruits = ['사과', '딸기', '수박']; // List 보다 편하게 사용할 수 있습니다.
+      for (let i=0; i<fruits.length; i++) {
+           let fruit = fruits[i];
+           console.log(fruit);
+      }
+      ```
+
+
+## [3주차] Javascript 기초 - 2
+- Javascript 기초 문법
+  - 조건문
+    ```JavaScript
+    let fruits = ['사과', '딸기', '수박']; // List 보다 편하게 사용할 수 있습니다.
+    for (let i=0; i<fruits.length; i++) {
+        let fruit = fruits[i];
+        if(fruit === '수박')  console.log(fruit == '수박');
+    }
+    ```
+  - 함수
+    ```JavaScript
+    function sample() {
+	       alert('얼럿!');
+    }
+    ```
+  - 백틱
+    ```JavaScript
+    let name = '내 이름';
+    let text = `${name}님의 스프링 5주 완주를 축하합니다!`;
+    console.log(text);
+    ```
+  - 연습 퀴즈 - 과일 개수 세기
+    - Javascript 배열 안에서 과일이 몇 개인지 세는 함수를 만들어보겠습니다.
+      다음 실행 결과를 만들 수 있으면 됩니다.
+      - let count = countFruit('감'); 
+      - console.log(count); // 배열에 들어있는 감의 개수 인쇄
+    - 정답
+      ```JavaScript
+      let fruits = ['사과', '딸기', '수박'];
+      function countFruit(fruit) {
+        let count = 0;
+        for(int i=0; i<fruits.length();i++) {
+          if(fruit === fruits[i]) count++;
+        }
+        return count;
+      }
+      ```
+
+
+## [3주차] jQuery 기초 - 1
+- jQuery 란?
+  - jQuery는, 미리 작성된 자바스크립트 함수 모음집이다.
+  - 되게 많이들 쓰는 HTML, CSS 조작 함수를 미리 만들어서 제공해주는 것이다.
+  - 우리는 다 스스로 만들 필요없이 사용법만 알면 된다.
+  - https://www.w3schools.com/jquery/jquery_get_started.asp
+- jQuery 임포트 (head 태그 사이에)
+  ```JavaScript 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+- jQuery 사용법
+  - $로 시작하고, 괄호 안에 선택자로 대상을 적으면 된다.
+  ```JavaScript
+  $('#contents').hide();
+  ```
+- 연습 장소로 들어가보기
+- 숨기기 / 나타내기
