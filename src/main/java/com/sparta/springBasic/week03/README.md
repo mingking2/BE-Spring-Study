@@ -378,3 +378,41 @@
       addHTML(id, username, contents, modifiedAt);
   ```
 - getMessages, addHTML 완성
+
+
+[3주차] 메모 변경하기 - submitEdit 함수
+- 개발 스펙 확인
+  1. 작성 대상 메모의 username과 contents 를 확인
+  2. 작성한 메모가 올바른지 확인
+  3. 전달할 data 를 JSON으로 바꾸기
+  4. PUT /api/memos/{id} 에 data 전달
+- addHtml 리뷰
+- 작성 대상 메모의 username과 contents 를 확인
+  ```JavaScript
+  let username = $(`#${id}-username`).text().trim();
+  let contents = $(`#${id}-textarea`).val().trim();
+  ```
+- 작성한 메모가 올바른지 확인
+  ```JavaScript
+  if ( isValidContents(contents) == false) {
+      return;
+  }
+  ```
+- 전달한 data 를 JSON으로 바꾸기
+  ```JavaScript
+  let data = {'username': username, 'contents': contents};
+  ```
+- PUT /api/memos/{id} 에 data를 전달
+  ```JavaScript
+  $.ajax({
+      type: "PUT",
+      url: `/api/memos/${id}`,
+      contentType: "application/json",
+      data: JSON.stringify(data),
+      success: function (response) {
+          alert('메세지 변경에 성공하였습니다.');
+          window.location.reload();
+      }
+  });
+  ```
+- submitEdit 함수 완성
