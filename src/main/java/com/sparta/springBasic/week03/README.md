@@ -1,5 +1,12 @@
 # [스파르타코딩클럽] 웹개발의 봄, Spring - 3주차
-## [3주차] 프로젝트 만들고 API 설계하기
+
+## 01. [3주차] 이번 주 배울 것
+- 서버 완성하기 - Memo API
+- HTML, CSS
+- Javascript, jQuery
+- 클라이언트 완성하기
+
+## 02. [3주차] 프로젝트 만들고 API 설계하기
 - 전체 그림 다시보기
   - Controller - Service - Repository 3계층이 존재한다.
   - 우리는 안에서 바깥으로, 즉 Repository 쪽부터 Service, Controller 방향으로 만들어나간다.
@@ -12,7 +19,7 @@
     - 메모 삭제하기  DELETE   /api/memos/{id}  Long
 
 
-## [3주차] Repository 만들기
+## 03. [3주차] Repository 만들기
 - Memo 클래스 만들기
   - 메모는 1) 익명의 작성자 이름(username), 2) 메모 내용 (contents)으로 이루어져 있다.
   - domain 패키지를 만든다.
@@ -27,7 +34,7 @@
 
 
 
-## [3주차] Service 만들기
+## 04. [3주차] Service 만들기
 - MemoService 클래스 만들기
   1. src > main > java > com.sparta.week03 에 service 패키지를 만든다.
   2. 해당 페키지 아래에 MemoService.java 파일을 만든다.
@@ -37,7 +44,7 @@
 
 
 
-## [3주차] Controller 만들기
+## 05. [3주차] Controller 만들기
 - API 완성하기
   - MemoController.java 만들기
     1. src > main > java > com.sparta.week03 에 controller 패키지 만들기
@@ -59,7 +66,7 @@
   - Create 와 유사하다.
 
 
-## [3주차] HTML, CSS 기초
+## 06. [3주차] HTML, CSS 기초
 - HTML, CSS, Javascript의 구분
   - HTML은 뼈대고, CSS는 꾸며주는 녀석이다.
 - HTML의 기초
@@ -112,7 +119,7 @@
 
 
 
-## [3주차] Javascript 기초 - 1
+## 07. [3주차] Javascript 기초 - 1
 - Javascript 란?
   - 브라우저를 살아 숨쉬게 만드는 친구이다.
   - 클릭, 마우스 오버 시 색 변화, 숨기기, 나타내기, 등등 수많은 일을 할 수 있다.
@@ -171,7 +178,7 @@
       ```
 
 
-## [3주차] Javascript 기초 - 2
+## 08. [3주차] Javascript 기초 - 2
 - Javascript 기초 문법
   - 조건문
     ```JavaScript
@@ -211,7 +218,7 @@
       ```
 
 
-## [3주차] jQuery 기초 - 1
+## 09. [3주차] jQuery 기초 - 1
 - jQuery 란?
   - jQuery는, 미리 작성된 자바스크립트 함수 모음집이다.
   - 되게 많이들 쓰는 HTML, CSS 조작 함수를 미리 만들어서 제공해주는 것이다.
@@ -241,7 +248,7 @@
     ```
 
 
-## [3주차] jQuery 기초 - 2
+## 10. [3주차] jQuery 기초 - 2
 - input 값 가져오기, 넣기
   - input 값 가져오기
     ```JavaScript
@@ -271,7 +278,7 @@
     ```
 
 
-## [3주차] 클라이언트 설계하기
+## 11. [3주차] 클라이언트 설계하기
 - 필요한 기능 살펴보기
   1. 접속하자마자 메모 전체 목록 조회하기
      -  GET API 사용해서 메모 목록 불러오기
@@ -294,7 +301,7 @@
   - src > main > resources > static 에 만든 index.html에 내용 삽입
 
 
-## [3주차] 메모 생성하기 - writePost 함수
+## 12. [3주차] 메모 생성하기 - writePost 함수
 - 개발 스펙 확인
   1. 사용자가 입력한 메모 내용 확인하기
   2. POST API 사용해서 메모 신규 생성하기
@@ -334,7 +341,7 @@
 - writePost 함수 완성
 
 
-[3주차] 메모 조회하기 - getMessages 함수 - 1
+## 13. [3주차] 메모 조회하기 - getMessages 함수 - 1
 - 개발 스펙 확인
   1. 기존 메모 제거하기
   2. GET API사용해서 메모 목록 불러오기
@@ -360,7 +367,7 @@
   ```
 
 
-[3주차] 메모 조회하기 - getMessages 함수 - 2
+## 14. [3주차] 메모 조회하기 - getMessages 함수 - 2
 - 메모 마다 HTML 만들고 붙이는 함수 만들기
 - Timestamped, Application 수정하기
   - 뭔가 이상하지 않나요? 왜 created_at, modified_at 데이터는 안 오는 걸까요?
@@ -380,7 +387,7 @@
 - getMessages, addHTML 완성
 
 
-[3주차] 메모 변경하기 - submitEdit 함수
+## 15. [3주차] 메모 변경하기 - submitEdit 함수
 - 개발 스펙 확인
   1. 작성 대상 메모의 username과 contents 를 확인
   2. 작성한 메모가 올바른지 확인
@@ -419,13 +426,13 @@
 
 
 
-[3주차] 메모 삭제하기 - deleteOne 함수
+## 16. [3주차] 메모 삭제하기 - deleteOne 함수
 - 개발 스펙 확인
 - DELETE API 사용해서 메모 삭제하기
 - 클라이언트 완성 코드
 
 
-[3주차] 끝 & 숙제설명
+## 17. [3주차] 끝 & 숙제설명
 - 잠깐 복습
   - REST API의 CRUD 전체 프로세스를, 다시 한 번 복습했다.
   - HTML, CSS, Javascript, jQuery를 통해 보이는 화면을 만들고 조작하는 방법에 대해 배웠다.

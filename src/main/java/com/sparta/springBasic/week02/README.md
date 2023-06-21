@@ -1,6 +1,12 @@
 # [스파르타코딩클럽] 웹개발의 봄, Spring - 2주차
-## [2주차] RDBMS
 
+## 01. [2주차] 이번 주 배울 것
+- RDBMS, H2, SQL
+- JPA, Repository
+- API, Lombok, DTO
+- 프로젝트 준비하기
+
+## 02. [2주차] RDBMS
 - 배울 부분
   - MySQL, H2
 - RDBMS
@@ -30,7 +36,7 @@
   - SpringBasicApplication.java 파일을 Run한다.
 
 
-## [2주차] SQL 연습하기
+## 03. [2주차] SQL 연습하기
 - SQL 연습하기
   - H2 웹콘솔 사용해보기
     - 기본 개념
@@ -89,7 +95,7 @@
       ```
 
 
-## [2주차] JPA 시작하기
+## 04. [2주차] JPA 시작하기
 - 배울 부분
   - Repository, JPA, Model
 - JPA
@@ -129,7 +135,7 @@
       - 인터페이스는 클래스에서 멤버가 빠진, 메소드 모음집이다.
 
 
-## [2주차] JPA 사용해보기
+## 05. [2주차] JPA 사용해보기
 - SQL이 보이도록 application.properties 세팅
   ```
     spring.jpa.show-sql=true
@@ -140,7 +146,7 @@
   - 웹콘솔 접속해서 확인해보기
 
 
-## [2주차] 생성일자, 수정일자
+## 06. [2주차] 생성일자, 수정일자
 - 상속의 개념
   - "클래스의 상속 -> 이미 만들어둔거 가져다 쓰자! 라고 선언하는 것"
   
@@ -189,7 +195,7 @@
 - http://localhost:8080/h2-console 접속해서 확인해보기
 
 
-## [2주차] JPA 심화
+## 07. [2주차] JPA 심화
 - CRUD
   ```
   CRUD란? 정보관리의 기본 기능
@@ -223,7 +229,7 @@
 
 
 
-## [2주차] Lombok, DTO
+## 08. [2주차] Lombok, DTO
 - 배울 부분
   - API, ( Controller, Service, DTO )
 - Lombok 소개
@@ -252,7 +258,7 @@
     - Application 변경하기
 
 
-## [2주차] API - GET
+## 09. [2주차] API - GET
 - API
   ```
   클라이언트 - 서버 간의 약속이다.
@@ -296,7 +302,7 @@
 
 
 
-## [2주차] API - POST,PUT,DELETE
+## 10. [2주차] API - POST,PUT,DELETE
 - Post
   - Post 는 생성 요청이다.
   - CourseController > POST
@@ -346,7 +352,7 @@
 
 
 
-## [2주차] 끝 & 숙제설명
+## 11. [2주차] 끝 & 숙제설명
 - 잠깐 복습
   - RDBMS란 무엇인지, 대표적인 제품과 작동 명령어인 SQL에 대해 배웠다.
   - 자바 명령어를 SQL로 번역하고 기본적인 메소드를 제공하는 JPA에 대해 배웠다.
