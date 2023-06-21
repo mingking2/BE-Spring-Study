@@ -332,34 +332,49 @@
   });
   ```
 - writePost 함수 완성
-  ```JavaScript
-  // 메모를 생성한다.
-  function writePost() {
-    // 1. 작성한 메모를 불러온다.
-    let contents = $('#contents').val();
-    
-    // 2. 작성한 메모가 올바른지 isValidContents 함수를 통해 확인한다.
-    if ( isValidContents(contents) == false) {
-      return;
-    }
-  
-    // 3. genRandomName 함수를 통해 익명의 username을 만든다.
-    let username = genRandomName(10);
-  
-    // 4. 전달한 data JSON으로 만든다.
-    let data = {'username': username, 'contents': contents};
-  
-    // 5. POST /api/memos 에 data를 전달한다.
-    $.ajax({
-       type: "POST",
-       url: "/api/memos",
-       contentType: "application/json", // JSON 형식으로 전달함을 알리기
-       data: JSON.stringify(data),
-       success: function (response) {
-           alert('메시지가 성공적으로 작성되었습니다.');
-           window.location.reload();
-       }
-    });
 
-  }
+
+[3주차] 메모 조회하기 - getMessages 함수 - 1
+- 개발 스펙 확인
+  1. 기존 메모 제거하기
+  2. GET API사용해서 메모 목록 불러오기
+  3. 메모마다 HTML 만들고 붙이는 함수 만들기
+- 메모 조회하기
   ```
+  아래의 붉은 상자 영역이 div#cards-box이다. 메모 목록을 담는 div이다.
+  이번 작업은 getMessages(), addHTML() 함수를 다루는 것이다.
+  ```
+- 기존 메모 제거하기
+  ```JavaScript
+   $('#cards-box').empty()
+  ```
+- GET API 사용해서 메모 목록 불러오기
+  ```JavaScript
+  $.ajax({
+      type: 'GET',
+      url: '/api/memos',
+      success: function (response) {
+          console.log(response);
+      }
+  })
+  ```
+
+
+[3주차] 메모 조회하기 - getMessages 함수 - 2
+- 메모 마다 HTML 만들고 붙이는 함수 만들기
+- Timestamped, Application 수정하기
+  - 뭔가 이상하지 않나요? 왜 created_at, modified_at 데이터는 안 오는 걸까요?
+  - 바로 Getter가 없기 때문이다.
+  - 거기에 스프링에게 Auditing 기능을 사용하고 있다고 알려줘야 한다.
+  - 이렇게 중간중간 어노테이션을 빼먹으면 작동이 의도대로 안될 때가 많다.
+- 반복문 안에서 addHTML 호출
+  ```JavaScript
+  for ( let i = 0; i< response.length; i++) {
+      let message = response[i];
+      let id = message['id'];
+      let username = message['username'];
+      let contents = message['contents'];
+      let modifiedAt = message['modifiedAt'];
+      addHTML(id, username, contents, modifiedAt);
+  ```
+- getMessages, addHTML 완성
