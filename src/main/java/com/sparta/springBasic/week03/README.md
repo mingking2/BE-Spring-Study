@@ -423,3 +423,19 @@
 - 개발 스펙 확인
 - DELETE API 사용해서 메모 삭제하기
 - 클라이언트 완성 코드
+
+
+[3주차] 끝 & 숙제설명
+- 잠깐 복습
+  - REST API의 CRUD 전체 프로세스를, 다시 한 번 복습했다.
+  - HTML, CSS, Javascript, jQuery를 통해 보이는 화면을 만들고 조작하는 방법에 대해 배웠다.
+  - API를 먼저 설계하고, 그에 따라 클라이언트 코드를 작성하는 프로세스를 익혔다.
+- 숙제 설명
+  ```
+  타임라인 서비스가 불러오는 메모 목록의 시간을, 조회 시간으로부터 24시간 이내로 바꿔보세요.
+  힌트1) spring jpa localtime between 이라고 구글링해보세요.
+  힌트2) 지금은 LocaDateTime.now(), 하루 전은 LocalDateTime.now().minusDays(1) 입니다.
+  ```
+  - 제출 파일
+    - MemoRepository.java
+    - MemoController.java
