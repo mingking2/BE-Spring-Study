@@ -74,6 +74,11 @@
   3. SPRING 탭을 클릭하면 아래처럼 바로 코드로 바꿔줌을 확인할 수 있다. 그럼 정말 작동하는지 확인하자.
 - 스프링 프로젝트 준비하기
 - 검색 실행하고 결과 확인하기
+  1. src > main > java > com.sparta.week04 에 utils 패키지를 만든다.
+  2. NaverShopSearch.java 파일을 생성한다.
+  3. NaverShopSearch 클래스
+  4. search 함수 안에 ARC에서 복사한 코드를 붙여넣는다.
+  5. 정상 작동을 확인한다.
 
 
 ## 05. [4주차] 프로젝트 설계하기
