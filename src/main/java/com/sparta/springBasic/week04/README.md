@@ -29,8 +29,42 @@
 - HTML, CSS, jQuery 도 최소한은 할 줄 알아야 한다.
   - 뼈대만 완성된 HTML, CSS, jQuery 소스를 드린다.
   - 함께 해볼 부분은, 여기에 데이터를 끼워서 직접 화면에 띄워보는 것이다.
+  
 ## 02. [4주차] 네이버 쇼핑 API 이용 신청하기
+- 네이버 API란?
+  - 네이버 서비스를 코드로 이용할 수 있는 서비스이다.
+  - 네이버 API 목록 살펴보기
+    - https://developers.naver.com/products/intro/plan/
+- 제공하는 API
+  - 상당히 많네, 이중에서 검색 API 쓰자
+- 사용할 API 살펴보기
+  - https://developers.naver.com/products/service-api/datalab/datalab.md
+- API 이용 신청하기
+  - 상당히 재밋게 신청완료
+
 ## 03. [4주차] 네이버 쇼핑 API 바로 사용해보기
+- ARC로 검색해보기
+  1. ARC를 실행하세요
+  2. 네이버 쇼핑 API 설명 문서
+     - https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md
+  3. <API 기본 정보>에서 출력포맷이 JSON인 녀석의 요청 URL을 복사해서 ARC의 URL에 붙여 넣어준다.
+  4. Headers에서 "Add Header"를 두 번 클릭하고, 첫 번째 header의 name에 "X-Naver-Client-Id", value에 지난 시간에 만든 Client ID를 복사해서 넣어주세요. 두 번째 header에 "X-Naver-Client-Secret" 와 Client Secret을 각각 넣어주세요.
+  5. 주소 제일 마지막에 "?query=adidas"라고 적은 뒤 SEND 버튼을 누르세요.
+     - GET 요청에서 필요한 정보를 같이 보내는 방법! ? 과 & 를 사용한다.
+  6. 아디다스 검색 성공
+- 검색 결과 살펴보기
+  - 문서 설명
+  - 실제 결과
+    - 특히 중요한 정보는 title, link, image, Iprice
+- 검색 기준 바꿔보기
+  - GET 요청에서 필요한 정보를 같이 보내는 방법! ? 과 & 를 사용한다.
+    1. 검색어 바꿔보기
+    2. display 30 넣어보기
+    3. start 30 넣어보기
+    4. sort asc 넣어보기
+  - 다해봄
+
+
 ## 04. [4주차] 자바로 네이버 쇼핑 API 이용하기
 ## 05. [4주차] 프로젝트 설계하기
 ## 06. [4주차] 관심 상품 조회하기
