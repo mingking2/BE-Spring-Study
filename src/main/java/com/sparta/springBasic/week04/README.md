@@ -131,6 +131,17 @@
 
 
 ## 07. [4주차] 관심 상품 등록하기
+- 요구조건 살펴보기
+  - 상품을 검색한 후, 등록 버튼을 눌렀을 때 관심 상품이 생성되어야 한다.
+  - 검색 결과에서 제목, 이미지, 링크, 최저가를 가져오면 된다.
+- Dto 클래스 만들기
+  - ProductRequestDto
+  - ProductMypriceRequestDto
+- Product 클래스 개선하기
+- ProductService 만들기
+- ProductRestController 개선하기
+
+
 ## 08. [4주차] 키워드로 상품 검색하기 - NaverShopSearch 발전시키기
 ## 09. [4주차] 키워드로 상품 검색하기 - 네이버 API와 서비스 연결하기
 ## 10. [4주차] HTML, 이미지 파일 준비하기
