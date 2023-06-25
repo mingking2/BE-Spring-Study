@@ -143,6 +143,51 @@
 
 
 ## 08. [4주차] 키워드로 상품 검색하기 - NaverShopSearch 발전시키기
+- 요구 조건 살펴보기
+  - 이전에 만들어 둔 NaverShopSearch 클래스를, 웹서비스에 이용할 수 있도록 발전시키자
+    1. 검색어를 요구에 따라 바꿀 수 있어야 한다.
+    2. 검색 결과를 문자열에서 DTO로 바꿔야 한다.
+- 검색어 바꾸기
+  - 검색어를 아이맥으로 바꾸자
+  - search 메소드 바꾸기
+- 검색 결과를 문자열에서 DTO로 바꾸기
+  - org.json 패키지 설치하기
+    - JSON을 자바에서 다루기 위해, JSONObject, JSONArray 클래스가 필요하다.
+    - 우리가 만드는 대신, 다른 사람이 만든 훌륭한 라이브러리를 바로 가져와서 사용하자.
+    - 이번 시간에는 **다른 사람이 만든 라이브러리 가져오는 방법(임포트)** 에 대해 배우자.
+      1. 구글에 maven central 검색 후 첫 번째 결과 클릭
+      2. 검색창에 json 입력 후 엔터
+      3. JSON In Java 클릭
+      4. 숫자 가장 높은 버전 클릭
+      5. Gradle 탭 클릭
+      6. 내용 복사하여 build.gradle > dependencies 안에 붙여넣기
+      7. dependencies 옆에 Run 버튼 클릭
+      8. 임포트 완료!
+  - JSONObject, JSONArray 연습하기
+    1. 문자열 정보를 JSONObject로 바꾸기
+       ```java
+       JSONObject rjson = new JSONObject(result);
+       ```
+    2. JSONObject에서 items 배열 꺼내기
+       ```java
+       JSONArray items = rjson.getJSONArray("items");
+       ```
+    3. JSONArray 로 for 문 돌기
+       ```java
+       for(int i=0; i<items.length(); i++) {
+            JSONObject itemJson = (JSONObject) items.get(i);
+            System.out.println(itemJson);
+       }
+       ```
+    4. JSONObject 에서 String, int 데이터 뽑기
+       ```java
+       String title = itemJson.getString("title");
+       int lprice = itemJson.getInt("lprice");
+       ```
+  - ItemDto 생성하기
+  - fromJSONtoItems 메소드 만들기
+
+
 ## 09. [4주차] 키워드로 상품 검색하기 - 네이버 API와 서비스 연결하기
 ## 10. [4주차] HTML, 이미지 파일 준비하기
 ## 11. [4주차] 상품 검색 기능 만들기
