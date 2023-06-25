@@ -115,6 +115,21 @@
 
 
 ## 06. [4주차] 관심 상품 조회하기
+- 요구조건 살펴보기
+  - 모아보기 탭을 눌렀을 때 아래와 같이 등록된 관심 상품을 조회할 수 있다.
+- Timestamped 클래스 만들기
+  - Timestamped
+  - Application
+- Product 클래스 만들기
+  - 요구조건 살펴보기
+    - title, image, link, lprice, myprice 정보가 필요함을 알 수 있다.
+  - Product 클래스
+- ProductRepository 만들기
+- ProductRestController 만들기
+- 확인해보기
+  - ARC로 정상 작동함을 확인한다.
+
+
 ## 07. [4주차] 관심 상품 등록하기
 ## 08. [4주차] 키워드로 상품 검색하기 - NaverShopSearch 발전시키기
 ## 09. [4주차] 키워드로 상품 검색하기 - 네이버 API와 서비스 연결하기

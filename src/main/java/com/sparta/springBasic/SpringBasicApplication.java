@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.List;
 
-@EnableJpaAuditing
-@SpringBootApplication
+@EnableJpaAuditing // 시간 자동 변경이 가능하도록 한다.
+@SpringBootApplication // 스프링 부트임을 선언한다.
 public class SpringBasicApplication {
 
     public static void main(String[] args) {
