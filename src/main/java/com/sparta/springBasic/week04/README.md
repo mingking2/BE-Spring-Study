@@ -91,7 +91,27 @@
   - 5분 동안 각 기능의 API를 설계해라
   - EX) 관심 상품 등록하기 -> POST /api/product
 - API 설계하기
+  - |                    기능                    | Method |          URL           |      반환       |
+    |:----------------------------------------:|:------:|:----------------------:|:-------------:|
+    |     키워드로 상품 검색하고<br/>그 결과를 목록으로 보여주기     |  GET   | /api/search?query=검색어  | List<ItemDto> |
+    |                관심 상품 등록하기                |  POST  |            /api/products        |    Product    | 
+    |                관심 상품 조회하기                |  GET   |     /api/products      | List<Product> |
+     | 관심 상품에 관심 가격 등록하고,<br/>그 가격보다 낮은 경우 표시하기 |  PUT   |   /api/products/{id}   |      id       |
+
 - 3계층 설계하기
+  1. Controller
+     - ProductRestController: 관심 상품 관련 컨트롤러
+     - SearchRequestController: 검색 관련 컨트롤러
+  2. Service
+     - ProductService: 관심 상품 가격 변경
+  3. Repository
+     - 여기서 DB에 저장되는 녀석은 Product 뿐이라는 점
+     - Product: 관심 상품 테이블
+     - ProductRepository: 관심 상품 조회, 저장
+     - ProductRequestDto: 관심 상품 등록하기
+     - ProductMypriceRequestDto: 관심 가격 변경하기
+     - ItemDto: 검색 결과 주고받기
+  
 
 
 ## 06. [4주차] 관심 상품 조회하기
