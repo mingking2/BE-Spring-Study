@@ -247,7 +247,33 @@
     }
     ```
   - addHTML 완성하기
+
+  
 ## 12. [4주차] 관심 상품 등록하기
+- addProduct 함수 만들기
+  - 관심 상품 생성 요청
+    ```javascript
+    function addProduct(itemDto) {
+      $.ajax({
+          type: "POST",
+          url: '/api/products',
+          contentType: "application/json",
+          data: JSON.stringify(itemDto),
+          success: function (response) {
+        
+          }
+      })
+    }
+    ```
+  - model 뜨게 하기
+    ```javascript
+    $('#container').addClass('active');
+    ```
+  - targetId = response.id
+    ```javascript
+    targetId = response.id;
+    ```
+  
 ## 13. [4주차] 관심 상품 보여주기
 ## 14. [4주차] 스케줄러 만들기
 ## 15. [4주차] 끝 & 숙제설명
