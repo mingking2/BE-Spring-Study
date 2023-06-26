@@ -200,7 +200,20 @@
 - SearchRequestController 만들기
   - 키워드로 상품 검색하고 그 결과를 목록으로 보여주기  :  GET  :  /api/search?query=검색어
 - ARC로 기능 확인하기
+
+
 ## 10. [4주차] HTML, 이미지 파일 준비하기
+- 파일 분리
+  - 파일분리는, HTML 파일이 CSS와 Javascript 때문에 지나치게 길어지는 것을 방지하고 가독성을 높이기 위한 방법이다.
+    1. .css와 .js로 끝나는 파일을 만들고,
+    2. link 와 script 태그로 각 파일을 불러온다.
+- 파일 준비
+  - 미리 준비한 HTML, CSS, Javascript 팡리과 이미지 아이콘을 다운받는다.
+  - src > main > resources > static에 index.html, basic.js, style.css 파일을 생성하고 아래 코드를 붙여넣는다.
+  - src > main > resources > static에 images 폴더를 만들고 아래 파일을 저장한다.
+- 제대로 저장하였는지 확인하기
+
+
 ## 11. [4주차] 상품 검색 기능 만들기
 ## 12. [4주차] 관심 상품 등록하기
 ## 13. [4주차] 관심 상품 보여주기
