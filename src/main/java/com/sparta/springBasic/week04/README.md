@@ -215,6 +215,38 @@
 
 
 ## 11. [4주차] 상품 검색 기능 만들기
+- execSearch, addHTML 함수 만들기
+  - 검색창 입력값 가져오기
+    ```javascript
+    let query = $('#query').val();
+    ```
+  - 검색창 입력값을 검사하고, 입력하지 않았을 경우 focus
+    ```javascript
+    if (query == '') {
+        alert('검색어를 입력해주세요');
+        $('#query').focus();
+        return;
+    }
+    ```
+  - GET /api/search?query=${query} 요청
+    ```javascript
+    $.ajax({
+        type: 'GET',
+        url: `/api/search?query=${query}`,
+        success: function (response) {
+            $('#search-result-box').empty();
+        }
+    })
+    ```
+  - for 문마다 itemDto를 꺼내서 HTML 만들고 검색결과 목록에 붙이기
+    ```javascript
+    for(let i = 0; i < response.length; i++) {
+        let itemDto = response[i];
+        let tempHtml = addHTML(itemDto);
+        $('#search-result-box').append(tempHtml);
+    }
+    ```
+  - addHTML 완성하기
 ## 12. [4주차] 관심 상품 등록하기
 ## 13. [4주차] 관심 상품 보여주기
 ## 14. [4주차] 스케줄러 만들기
