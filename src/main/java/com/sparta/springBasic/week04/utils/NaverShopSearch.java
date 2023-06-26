@@ -4,11 +4,13 @@ import com.sparta.springBasic.week04.models.ItemDto;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.*;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component // 이제부터, @RequiredArgsConstructor 와 함께 사용할 경우 스프링이 자동으로 생성한다.
 public class NaverShopSearch {
     public String search(String query) {
         RestTemplate rest = new RestTemplate();
@@ -30,20 +32,19 @@ public class NaverShopSearch {
 
     public List<ItemDto> fromJSONtoItems(String result) {
         JSONObject rjson = new JSONObject(result);
-        JSONArray items = rjson.getJSONArray(result);
+        JSONArray items = rjson.getJSONArray("items");
         List<ItemDto> ret = new ArrayList<>();
         for(int i=0; i<items.length(); i++) {
-            JSONObject itemJson = items.getJSONObject(i);
-            System.out.println(itemJson);
+            JSONObject itemJson = (JSONObject) items.get(i);
             ItemDto itemDto = new ItemDto(itemJson);
             ret.add(itemDto);
         }
         return ret;
     }
 
-    public static void main(String[] args) {
-        NaverShopSearch naverShopSearch = new NaverShopSearch();
-        String ret = naverShopSearch.search("아이맥");
-        naverShopSearch.fromJSONtoItems(ret);
-    }
+//    public static void main(String[] args) {
+//        NaverShopSearch naverShopSearch = new NaverShopSearch();
+//        String ret = naverShopSearch.search("아이맥");
+//        naverShopSearch.fromJSONtoItems(ret);
+//    }
 }
