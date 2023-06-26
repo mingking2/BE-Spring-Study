@@ -275,5 +275,54 @@
     ```
   
 ## 13. [4주차] 관심 상품 보여주기
+- $(document).ready 함수의 의미
+  - 페이지가 모두 로드된 직후 실행할 자바스크립트 코드를 넣는 곳이다.
+  - 일단 접속하면 관심 상품을 보여주어야하기 때문에 showProduct 함수를 호출하고 있다.
+- showProduct, addProductItem 만들기
+  - GET /api/products 요청
+    ```javascript
+    $.ajax({
+        type: 'GET',
+        url: '/api/products',
+        success: function (response) {
+    
+        }
+    })
+    ```.
+  - 관심상품 목록, 검색결과 목록 비우기
+    ```javascript
+    $('#product-container').empty();
+    $('#search-result-box').empty();
+    ```
+  - for 문마다 관심 상품 HTML 만들어서 관심상품 목록에 붙이기
+    ```javascript
+    for (let i = 0; i< response.length; i++) {
+        let product = response[i];
+        let tempHtml = addProductItem(product);
+        $('#product-container'.append(tempHtml);
+    }
+    ```
+  - link, image, title, lprice, myprice 변수 활용하기
+    ```javascript
+    // link, image, title, lprice, myprice 변수 활용하기
+    return `<div class="product-card" onclick="window.location.href='${product.link}'">
+                <div class="card-header">
+                    <img src="${product.image}"
+                         alt="">
+                </div>
+                <div class="card-body">
+                    <div class="title">
+                         ${product.title}
+                    </div>
+                    <div class="lprice">
+                        <span>${numberWithCommas(product.lprice)}</span>원
+                    </div>
+                    <div class="isgood ${product.lprice > product.myprice ? 'none' : ''}">
+                         최저가
+                    </div>
+                </div>
+    </div>`;
+    ```
+- 완성
 ## 14. [4주차] 스케줄러 만들기
 ## 15. [4주차] 끝 & 숙제설명
