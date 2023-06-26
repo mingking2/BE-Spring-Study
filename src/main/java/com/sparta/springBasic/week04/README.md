@@ -324,5 +324,15 @@
     </div>`;
     ```
 - 완성
+
+
 ## 14. [4주차] 스케줄러 만들기
+- 요구 기능
+  - 매일 새벽 1시에 관심 상품 목록 제목으로 검색해서, 최저가 정보를 업데이트하는 스케줄러를 만들자.
+- Scheduler 만들기
+  - src > main > java > com.sparta.week04 > utils 에 Scheduler.java 파일을 만들어라.
+  - Scheduler 클래스
+  - ProductService 클래스
+  - Application 클래스
+- 확인
 ## 15. [4주차] 끝 & 숙제설명

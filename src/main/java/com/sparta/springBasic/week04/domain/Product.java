@@ -1,5 +1,6 @@
 package com.sparta.springBasic.week04.domain;
 
+import com.sparta.springBasic.week04.models.ItemDto;
 import com.sparta.springBasic.week04.models.ProductMypriceRequestDto;
 import com.sparta.springBasic.week04.models.ProductRequestDto;
 import jakarta.persistence.*;
@@ -44,5 +45,13 @@ public class Product extends Timestamped {
     // 관심 가격 변경 시 이용한다.
     public void update(ProductMypriceRequestDto requestDto) {
         this.myprice = requestDto.getMyprice();
+    }
+
+
+    public void updateByItemDto(ItemDto itemDto) {
+        this.title = itemDto.getTitle();
+        this.link = itemDto.getLink();
+        this.image = itemDto.getImage();
+        this.lprice = itemDto.getLprice();
     }
 }
